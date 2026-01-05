@@ -8,11 +8,15 @@
         isolation: isolate;
     }
 
+    .loading-zone {
+        position: relative;
+    }
+
     body.is-loading {
         cursor: progress;
     }
 
-    body.is-loading .page-shell > :not(.loading-ghosts):not(.app-loading) {
+    body.is-loading .loading-zone .loading-content {
         filter: blur(1px) saturate(0.9);
         opacity: 0.25;
         pointer-events: none;
@@ -21,8 +25,9 @@
 
     .app-loading {
         position: fixed;
-        inset: 0;
-        z-index: 40;
+        inset: 0 0 auto 0;
+        height: 3px;
+        z-index: 60;
         opacity: 0;
         visibility: hidden;
         transition: opacity 200ms ease;
@@ -35,35 +40,15 @@
     }
 
     .loading-ghosts {
-        position: fixed;
+        position: absolute;
         inset: 0;
-        z-index: 50;
+        z-index: 20;
         display: none;
         pointer-events: none;
     }
 
     body.is-loading .loading-ghosts {
         display: block;
-    }
-
-    .loading-backdrop {
-        position: absolute;
-        inset: 0;
-        background:
-            radial-gradient(900px circle at 10% 10%, rgba(148, 163, 184, 0.12), transparent 55%),
-            radial-gradient(700px circle at 90% 5%, rgba(16, 185, 129, 0.12), transparent 50%),
-            linear-gradient(180deg, rgba(15, 23, 42, 0.06), rgba(15, 23, 42, 0.16));
-        backdrop-filter: blur(1px);
-    }
-
-    .loading-sheen {
-        position: absolute;
-        inset: -20% 0;
-        background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.5) 40%, transparent 80%);
-        transform: translateX(-100%);
-        animation: loading-shimmer 1.4s ease-in-out infinite;
-        opacity: 0.35;
-        mix-blend-mode: screen;
     }
 
     .loading-surface {
@@ -116,8 +101,8 @@
 
     .loading-bar {
         position: absolute;
-        inset: 0 0 auto 0;
-        height: 3px;
+        inset: 0;
+        height: 100%;
         background: linear-gradient(90deg, #0f172a, #34d399, #0f172a);
         background-size: 200% 100%;
         animation: loading-bar 1.2s linear infinite;
@@ -126,12 +111,6 @@
 }
 
 @keyframes loading-shimmer {
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-@keyframes loading-sheen {
     100% {
         transform: translateX(100%);
     }
