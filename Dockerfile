@@ -17,7 +17,7 @@ RUN set -eux; \
         rm -rf /var/lib/apt/lists/*; \
     fi; \
     docker-php-ext-configure gd --with-freetype --with-jpeg; \
-    docker-php-ext-install gd mbstring zip xml xmlreader xmlwriter dom simplexml
+    docker-php-ext-install dom xml xmlreader xmlwriter simplexml gd mbstring zip
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader --no-scripts
 
@@ -37,7 +37,7 @@ RUN apt-get update \
         libpng-dev libjpeg62-turbo-dev libfreetype6-dev \
         libxml2-dev libonig-dev libpq-dev unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip mbstring gd xml xmlreader xmlwriter dom simplexml \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql dom xml xmlreader xmlwriter simplexml gd mbstring zip \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
