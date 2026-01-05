@@ -45,6 +45,7 @@ ENV PORT=10000
 WORKDIR /var/www/html
 COPY . .
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY docker/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 RUN chmod +x /usr/local/bin/entrypoint.sh
 COPY --from=vendor /app/vendor /var/www/html/vendor
 COPY --from=frontend /app/public/build /var/www/html/public/build

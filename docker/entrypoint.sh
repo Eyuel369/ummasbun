@@ -10,6 +10,12 @@ if [ -n "${RENDER_EXTERNAL_URL:-}" ]; then
     fi
 fi
 
+if [ "${APP_ENV:-}" = "production" ] && [ "${RUN_OPTIMIZE:-true}" = "true" ]; then
+    php artisan config:cache --no-interaction
+    php artisan route:cache --no-interaction
+    php artisan view:cache --no-interaction
+fi
+
 if [ "${RUN_MIGRATIONS:-true}" = "true" ]; then
     tries="${DB_WAIT_TRIES:-10}"
     delay="${DB_WAIT_DELAY:-3}"
