@@ -35,19 +35,12 @@
 
                 <div class="loading-ghosts" aria-hidden="true">
                     <div class="loading-surface loading-surface-full min-h-full">
-                        <div class="flex items-center gap-4">
-                            <div class="loading-skeleton h-12 w-12 rounded-2xl"></div>
-                            <div class="flex-1 space-y-2">
-                                <div class="loading-skeleton h-3 w-36 rounded-full"></div>
-                                <div class="loading-skeleton h-2.5 w-24 rounded-full"></div>
-                            </div>
-                        </div>
-                        <div class="mt-6 space-y-3">
-                            <div class="loading-skeleton h-4 w-4/6 rounded-full"></div>
-                            <div class="loading-skeleton h-10 w-full rounded-2xl"></div>
-                            <div class="loading-skeleton h-4 w-2/6 rounded-full"></div>
-                            <div class="loading-skeleton h-10 w-full rounded-2xl"></div>
-                        </div>
+                    <div class="mt-6 space-y-3">
+                        <div class="loading-skeleton h-4 w-4/6 rounded-full"></div>
+                        <div class="loading-skeleton h-10 w-full rounded-2xl"></div>
+                        <div class="loading-skeleton h-4 w-2/6 rounded-full"></div>
+                        <div class="loading-skeleton h-10 w-full rounded-2xl"></div>
+                    </div>
                         <div class="mt-6 flex items-center justify-between">
                             <div class="loading-skeleton h-4 w-24 rounded-full"></div>
                             <div class="loading-skeleton h-10 w-28 rounded-full"></div>

@@ -141,21 +141,13 @@
                     <div class="loading-ghosts" aria-hidden="true">
                         <div class="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
                             <div class="loading-surface loading-surface-full min-h-full">
-                                <div class="flex flex-wrap items-center gap-4">
-                                    <div class="loading-skeleton h-12 w-12 rounded-2xl"></div>
-                                    <div class="flex-1 space-y-2">
-                                        <div class="loading-skeleton h-3 w-40 rounded-full"></div>
-                                        <div class="loading-skeleton h-2.5 w-24 rounded-full"></div>
-                                    </div>
-                                    <div class="hidden sm:block loading-skeleton h-9 w-24 rounded-full"></div>
-                                </div>
-                                <div class="mt-6 flex flex-wrap gap-2">
-                                    <div class="loading-skeleton h-8 w-20 rounded-full"></div>
-                                    <div class="loading-skeleton h-8 w-24 rounded-full"></div>
-                                    <div class="loading-skeleton h-8 w-16 rounded-full"></div>
-                                    <div class="loading-skeleton h-8 w-24 rounded-full"></div>
-                                    <div class="loading-skeleton h-8 w-20 rounded-full"></div>
-                                </div>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <div class="loading-skeleton h-8 w-20 rounded-full"></div>
+                                <div class="loading-skeleton h-8 w-24 rounded-full"></div>
+                                <div class="loading-skeleton h-8 w-16 rounded-full"></div>
+                                <div class="loading-skeleton h-8 w-24 rounded-full"></div>
+                                <div class="loading-skeleton h-8 w-20 rounded-full"></div>
+                            </div>
                                 <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                     <div class="loading-skeleton h-24 rounded-2xl"></div>
                                     <div class="loading-skeleton h-24 rounded-2xl"></div>
