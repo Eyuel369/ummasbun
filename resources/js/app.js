@@ -7,22 +7,26 @@ window.Alpine = Alpine;
 Alpine.start();
 
 const loadingOverlay = document.getElementById('app-loading');
+const loadingBody = document.body;
+
 const showLoadingOverlay = () => {
-    if (!loadingOverlay) {
+    if (!loadingBody) {
         return;
     }
-    loadingOverlay.classList.remove('hidden');
-    loadingOverlay.setAttribute('aria-hidden', 'false');
-    document.documentElement.classList.add('overflow-hidden');
+    loadingBody.classList.add('is-loading');
+    if (loadingOverlay) {
+        loadingOverlay.setAttribute('aria-hidden', 'false');
+    }
 };
 
 const hideLoadingOverlay = () => {
-    if (!loadingOverlay) {
+    if (!loadingBody) {
         return;
     }
-    loadingOverlay.classList.add('hidden');
-    loadingOverlay.setAttribute('aria-hidden', 'true');
-    document.documentElement.classList.remove('overflow-hidden');
+    loadingBody.classList.remove('is-loading');
+    if (loadingOverlay) {
+        loadingOverlay.setAttribute('aria-hidden', 'true');
+    }
 };
 
 document.addEventListener('click', (event) => {

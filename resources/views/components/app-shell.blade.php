@@ -57,7 +57,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-slate-50 text-slate-900 antialiased font-sans">
-        <div class="flex min-h-screen flex-col">
+        <div class="page-shell flex min-h-screen flex-col">
             <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
                 <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
                     <div class="flex items-center gap-3">
@@ -218,23 +218,28 @@
             @endif
         </div>
 
-        <div id="app-loading" class="fixed inset-0 z-[60] hidden" aria-hidden="true" role="status">
-            <div class="absolute inset-0 loading-backdrop"></div>
-            <div class="absolute inset-x-0 top-0 h-1 loading-bar"></div>
-            <div class="relative mx-auto flex min-h-screen w-full max-w-2xl items-center px-4 py-8 sm:px-6 lg:px-8">
-                <div class="loading-surface w-full rounded-3xl p-6 sm:p-8">
-                    <div class="flex items-center gap-4">
+        <div class="loading-ghosts" aria-hidden="true">
+            <div class="loading-surface loading-surface-full min-h-screen w-full px-4 py-8 sm:px-6 lg:px-8">
+                <div class="mx-auto w-full max-w-6xl">
+                    <div class="flex flex-wrap items-center gap-4">
                         <div class="loading-skeleton h-12 w-12 rounded-2xl"></div>
                         <div class="flex-1 space-y-2">
                             <div class="loading-skeleton h-3 w-40 rounded-full"></div>
                             <div class="loading-skeleton h-2.5 w-24 rounded-full"></div>
                         </div>
-                        <div class="hidden sm:block loading-skeleton h-8 w-20 rounded-full"></div>
+                        <div class="hidden sm:block loading-skeleton h-9 w-24 rounded-full"></div>
                     </div>
-                    <div class="mt-6 grid gap-2 sm:grid-cols-3">
-                        <div class="loading-skeleton h-8 rounded-full"></div>
-                        <div class="loading-skeleton h-8 rounded-full"></div>
-                        <div class="loading-skeleton h-8 rounded-full"></div>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <div class="loading-skeleton h-8 w-20 rounded-full"></div>
+                        <div class="loading-skeleton h-8 w-24 rounded-full"></div>
+                        <div class="loading-skeleton h-8 w-16 rounded-full"></div>
+                        <div class="loading-skeleton h-8 w-24 rounded-full"></div>
+                        <div class="loading-skeleton h-8 w-20 rounded-full"></div>
+                    </div>
+                    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        <div class="loading-skeleton h-24 rounded-2xl"></div>
+                        <div class="loading-skeleton h-24 rounded-2xl"></div>
+                        <div class="loading-skeleton h-24 rounded-2xl"></div>
                     </div>
                     <div class="mt-6 space-y-3">
                         <div class="loading-skeleton h-4 w-5/6 rounded-full"></div>
@@ -248,6 +253,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="app-loading" class="app-loading" aria-hidden="true" role="status">
+            <div class="loading-backdrop"></div>
+            <div class="loading-sheen"></div>
+            <div class="loading-bar"></div>
         </div>
 
         <div id="confirm-modal" class="fixed inset-0 z-50 hidden items-center justify-center px-4">

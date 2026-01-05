@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-slate-900 antialiased">
-        <div class="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        <div class="page-shell min-h-screen bg-gradient-to-b from-slate-50 to-white">
             <div class="mx-auto flex min-h-screen w-full max-w-md flex-col justify-center px-6 py-10">
                 <div class="flex items-center gap-3">
                     <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-sm font-semibold text-white">
@@ -33,22 +33,25 @@
             </div>
         </div>
 
-        <div id="app-loading" class="fixed inset-0 z-[60] hidden" aria-hidden="true" role="status">
-            <div class="absolute inset-0 loading-backdrop"></div>
-            <div class="absolute inset-x-0 top-0 h-1 loading-bar"></div>
-            <div class="relative mx-auto flex min-h-screen w-full max-w-lg items-center px-4 py-8 sm:px-6 lg:px-8">
-                <div class="loading-surface w-full rounded-3xl p-6 sm:p-8">
+        <div class="loading-ghosts" aria-hidden="true">
+            <div class="loading-surface loading-surface-full min-h-screen w-full px-6 py-10">
+                <div class="mx-auto w-full max-w-md">
                     <div class="flex items-center gap-4">
                         <div class="loading-skeleton h-12 w-12 rounded-2xl"></div>
                         <div class="flex-1 space-y-2">
-                            <div class="loading-skeleton h-3 w-40 rounded-full"></div>
+                            <div class="loading-skeleton h-3 w-36 rounded-full"></div>
                             <div class="loading-skeleton h-2.5 w-24 rounded-full"></div>
                         </div>
                     </div>
                     <div class="mt-6 space-y-3">
-                        <div class="loading-skeleton h-4 w-5/6 rounded-full"></div>
-                        <div class="loading-skeleton h-4 w-full rounded-full"></div>
                         <div class="loading-skeleton h-4 w-4/6 rounded-full"></div>
+                        <div class="loading-skeleton h-10 w-full rounded-2xl"></div>
+                        <div class="loading-skeleton h-4 w-2/6 rounded-full"></div>
+                        <div class="loading-skeleton h-10 w-full rounded-2xl"></div>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="loading-skeleton h-4 w-24 rounded-full"></div>
+                        <div class="loading-skeleton h-10 w-28 rounded-full"></div>
                     </div>
                     <div class="mt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
                         <span class="loading-dot loading-pulse inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
@@ -56,6 +59,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="app-loading" class="app-loading" aria-hidden="true" role="status">
+            <div class="loading-backdrop"></div>
+            <div class="loading-sheen"></div>
+            <div class="loading-bar"></div>
         </div>
     </body>
 </html>
