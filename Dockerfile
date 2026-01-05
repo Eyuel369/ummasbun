@@ -49,5 +49,6 @@ COPY --from=frontend /app/public/build /var/www/html/public/build
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf /etc/apache2/apache2.conf \
     && sed -ri -e 's/Listen 80/Listen ${PORT}/' /etc/apache2/ports.conf \
     && sed -ri -e 's/:80>/:${PORT}>/' /etc/apache2/sites-available/000-default.conf \
+    && mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views storage/logs bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache
 EXPOSE 10000
