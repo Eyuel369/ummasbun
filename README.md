@@ -20,6 +20,23 @@ Minimalist POS and inventory tracker built on Laravel. Roles: owner, cashier, st
 5. `npm install`
 6. `npm run dev`
 
+### Deploy to Render
+
+1. Push this repo to GitHub (Render deploys from a Git repo).
+2. Create a database (Render Postgres or external MySQL).
+3. Create a Render Web Service from the repo. Use Docker with:
+   - Root Directory: empty
+   - Dockerfile Path: `./Dockerfile`
+4. Set required env vars in Render:
+   - `APP_ENV=production`, `APP_DEBUG=false`, `APP_URL=<your-render-url>`
+   - `APP_KEY` (generate locally with `php artisan key:generate --show`)
+   - Database: `DB_CONNECTION` (`pgsql` for Render Postgres or `mysql`), `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
+   - If using DB-backed session/cache/queue (default): `SESSION_DRIVER=database`, `CACHE_STORE=database`, `QUEUE_CONNECTION=database`
+5. In the Render Shell, run:
+   - `php artisan migrate --force`
+   - `php artisan storage:link`
+   - Optional demo data: `php artisan db:seed --class=DemoDataSeeder`
+
 ### Demo accounts
 
 - Owner: `owner@ummasbun.test` / `password`
