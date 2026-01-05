@@ -35,7 +35,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         libzip-dev zlib1g-dev \
         libpng-dev libjpeg62-turbo-dev libfreetype6-dev \
-        libxml2-dev libonig-dev unzip \
+        libxml2-dev libonig-dev libpq-dev unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip mbstring gd xml xmlreader xmlwriter dom simplexml \
     && a2enmod rewrite \
